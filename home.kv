@@ -1,0 +1,119 @@
+MDScreen:
+    name: "home"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+
+        Image:
+            source: "Purify.png"
+            size_hint: 1, 1
+            pos_hint: {"center_x": .5, "center_y": .5}
+
+        MDIconButton:
+            icon: "arrow-left"
+            use_font_size: "35sp"
+            pos_hint: {"center_y": .95}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "login"
+
+        MDIconButton:
+            icon: "dots-vertical"
+            use_font_size: "35sp"
+            pos_hint: {"center_x": .93, "center_y": .95}
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "settings"
+
+        MDLabel:
+            text: "WATER LEVEL"
+            font_size: "30sp"
+            font_name: "Poppins-SemiBold.ttf"
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 255/255, 255/255, 255/255, 1
+            pos_hint: {"center_x": .5, "center_y": .88}
+
+        MDLabel:
+            text: "Purify your water now!"
+            font_size: "10sp"
+            font_name: "Poppins-Regular.ttf"
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 255/255, 255/255, 255/255, 1
+            pos_hint: {"center_x": .5, "center_y": .843}
+
+        Image:
+            source: "monitor.png"
+            size_hint: .8, .8
+            pos_hint: {"center_x": .5, "center_y": .6}
+
+        MDLabel:
+            text: "Purification Complete!"
+            font_size: "10sp"
+            font_name: "Poppins-Regular.ttf"
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 255/255, 255/255, 255/255, 1
+            pos_hint: {"center_x": .5, "center_y": .35}
+
+        MDIconButton:
+            icon: "power"
+            user_font_size: "45sp"
+            pos_hint: {"center_x": .50, "center_y": .16}
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "settings"
+            canvas.before:
+                Color:
+                    rgb: 255/255, 255/255, 255/255, 1
+                Ellipse:
+                    size: self.size
+                    pos: self.pos
+
+        MDIconButton:
+            icon: "alarm"
+            user_font_size: "23sp"
+            pos_hint: {"center_x": .15, "center_y": .14}
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "settings"
+            canvas.before:
+                Color:
+                    rgb: 120/255, 120/255, 120/255, 1
+                Ellipse:
+                    size: self.size
+                    pos: self.pos
+
+        MDTextButton:
+            text: "Set Alarm"
+            font_size: "13sp"
+            pos_hint: {"center_x": .15, "center_y": .05}
+            halign: "center"
+            color: 41/255, 105/255, 223/255, 1
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "settings"
+
+        MDIconButton:
+            icon: "calendar"
+            user_font_size: "23sp"
+            pos_hint: {"center_x": .85, "center_y": .14}
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "about"
+            canvas.before:
+                Color:
+                    rgb: 120/255, 120/255, 120/255, 1
+                Ellipse:
+                    size: self.size
+                    pos: self.pos
+
+        MDTextButton:
+            text: "Schedule"
+            font_size: "13sp"
+            pos_hint: {"center_x": .85, "center_y": .05}
+            halign: "center"
+            color: 41/255, 105/255, 223/255, 1
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "about"

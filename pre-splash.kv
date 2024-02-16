@@ -1,0 +1,61 @@
+MDScreen:
+    name: "pre-splash"
+
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+
+        Image:
+            source: "ENVIRODRINK2.png"
+            size_hint: .4, .4
+            pos_hint: {"center_x": .19, "center_y": .95}
+
+        Image:
+            source: "splash.png"
+            size_hint: .8, .8
+            pos_hint: {"center_x": 0.5, "center_y": 0.65}
+
+        MDLabel:
+            text: "Hi There !"
+            pos_hint: {"center_y": 0.38}
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 41/255, 105/255, 223/255, 1
+            font_size: "35sp"
+            font_name: "Poppins-Bold.ttf"
+
+        MDLabel:
+            text: "We believe in a world where every single person has access to clean and safe water."
+            pos_hint: {"center_x": .5,"center_y": 0.3}
+            size_hint_x: .85
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 120/255, 120/255, 120/255, 1
+            font_size: "13sp"
+            font_name: "Poppins-LightItalic.ttf"
+
+        Button:
+            text: "START NOW!"
+            size_hint: .79, .08
+            pos_hint: {"center_x": .5, "center_y": .17}
+            background_color: 0, 0, 0, 0
+            font_name: "Poppins-Medium.ttf"
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "login"
+            canvas.before:
+                Color:
+                    rgb: 41/255, 105/255, 223/255, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [5]
+
+        MDTextButton:
+            text: "New User? Create a New Account"
+            font_size: "13sp"
+            pos_hint: {"center_x": .5, "center_y": .07}
+            halign: "center"
+            color: 120/255, 120/255, 120/255, 1
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "signup"

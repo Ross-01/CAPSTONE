@@ -1,0 +1,123 @@
+MDScreen:
+    name: "login"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDIconButton:
+            icon: "arrow-left"
+            use_font_size: "35sp"
+            pos_hint: {"center_y": .95}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "pre-splash"
+
+        MDLabel:
+            text: ""
+            font_size: "15sp"
+            font_name: "Poppins-Regular.ttf"
+            pos_hint: {"center_x": .615, "center_y": .951}
+
+        Image:
+            source: "corner2.png"
+            size_hint: .50, .50
+            pos_hint: {"center_x": .8, "center_y": .9}
+
+        Image:
+            source: "ENVIRODRINK.png"
+            size_hint: .55, .55
+            pos_hint: {"center_x": .30, "center_y": .8}
+
+        MDLabel:
+            text: "Proceed with your"
+            font_size: "18sp"
+            font_name: "Poppins-Medium.ttf"
+            color: 120/255, 120/255, 120/255, 1
+            pos_hint: {"center_x": .6, "center_y": .65}
+
+        MDLabel:
+            text: "Login"
+            font_size: "30sp"
+            font_name: "Poppins-SemiBold.ttf"
+            pos_hint: {"center_x": .6, "center_y": .58}
+
+        MDFloatLayout:
+            size_hint: .79, .08
+            pos_hint: {"center_x": .5, "center_y": .42}
+            MDLabel:
+                text: "Username"
+                font_size: "14sp"
+                font_name: "Poppins-Medium.ttf"
+                pos_hint: {"center_x": .5, "center_y": .9}
+            TextInput:
+                size_hint_y: .75
+                font_name: "Poppins-Regular.ttf"
+                pos_hint: {"center_x": .49, "center_y": .4}
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2sp"
+                foreground_color: 120/255, 120/255, 120/255, 1
+                font_size: "17sp"
+                multiline: False
+            Image:
+                source: "user/user6.png"
+                pos_hint: {"center_x": .96, "center_y": .5}
+                size_hint: .5, .5
+            MDFloatLayout:
+                pos_hint: {"center_x": .5, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: 120/255, 120/255, 120/255, 1
+
+        MDFloatLayout:
+            size_hint: .79, .08
+            pos_hint: {"center_x": .5, "center_y": .28}
+            MDLabel:
+                text: "Password"
+                font_size: "14sp"
+                font_name: "Poppins-Medium.ttf"
+                pos_hint: {"center_x": .5, "center_y": .9}
+            TextInput:
+                size_hint_y: .75
+                font_name: "Poppins-Regular.ttf"
+                pos_hint: {"center_x": .49, "center_y": .4}
+                background_color: 0, 0, 0, 0
+                cursor_color: 0, 0, 0, 1
+                cursor_width: "2sp"
+                font_size: "17sp"
+                multiline: False
+                password:True
+            Image:
+                source: "key/key6.png"
+                pos_hint: {"center_x": .96, "center_y": .5}
+                size_hint: .4, .4
+            MDFloatLayout:
+                pos_hint: {"center_x": .5, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: 120/255, 120/255, 120/255, 1
+
+        Button:
+            text: "Login"
+            background_color: 0,0,0,0
+            font_name: "Poppins-Medium.ttf"
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "home"
+            size_hint: .79, .08
+            pos_hint: {"center_x": .5, "center_y": .15}
+            canvas.before:
+                Color:
+                    rgb: 41/255, 105/255, 223/255, 1
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [2]
+
+        MDTextButton:
+            text: "New User? Create an Account"
+            font_size: "13sp"
+            pos_hint: {"center_x": .5, "center_y": .07}
+            halign: "center"
+            color: 120/255, 120/255, 120/255, 1
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "signup"
+
+

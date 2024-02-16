@@ -1,0 +1,14 @@
+MDScreen:
+    name: "settings"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDIconButton:
+            icon: "arrow-left"
+            use_font_size: "35sp"
+            pos_hint: {"center_y": .95}
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "home"
+
+        MDLabel:
+            text: "settings"
